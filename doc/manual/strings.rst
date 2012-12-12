@@ -351,8 +351,10 @@ One of the most common and useful string operations is concatenation::
     "Hello, world.\n"
 
 Constructing strings like this can become a bit cumbersome, however. To
-reduce the need for these verbose calls to ``strcat``, Julia allows
-interpolation into string literals using ``$``, as in Perl::
+reduce the need for these verbose calls to ``strcat``, Julia has two ways to 
+build strings with algebraic operations ``*`` and ``^`` along with string
+interpolation. For more powerful string manipulation, Julia allows for string 
+interpolation using ``$``, as in Perl::
 
     julia> "$greet, $whom.\n"
     "Hello, world.\n"
@@ -451,6 +453,15 @@ Another handy string function is ``repeat``::
 
     julia> repeat(".:Z:.", 10)
     ".:Z:..:Z:..:Z:..:Z:..:Z:..:Z:..:Z:..:Z:..:Z:..:Z:."
+
+Concatenation and iteration can also be done with the two algebraic operations 
+``*`` and ``^``::
+
+    julia> "Julia " * "is good." 
+    "Julia is good."
+
+    julia> "Very "^5 * "good"
+    "Very Very Very Very Very good"
 
 Some other useful functions include:
 
